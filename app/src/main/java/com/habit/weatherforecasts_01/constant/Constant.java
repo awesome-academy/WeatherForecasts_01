@@ -1,7 +1,5 @@
 package com.habit.weatherforecasts_01.constant;
 
-import com.habit.weatherforecasts_01.R;
-
 public class Constant {
     public static final String BASE_URL = "http://api.openweathermap.org/";
     public static final String CURRENT = "data/2.5/weather?lat=21.028511&lon=105.804817&appid=";
