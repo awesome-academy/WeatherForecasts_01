@@ -1,13 +1,12 @@
 package com.habit.weatherforecasts_01.utils;
 
-import com.habit.weatherforecasts_01.data.model.CurrentWeather;
+import com.habit.weatherforecasts_01.BuildConfig;
+import com.habit.weatherforecasts_01.constant.Constant;
 
 public class StringUtil {
 
-    public static String toStringCurrentWeather(CurrentWeather currentWeather){
-        return currentWeather.getAddress().concat(String.valueOf(currentWeather.getDate()))
-                .concat(String.valueOf(currentWeather.getTemp())).concat(currentWeather.getStatus())
-                .concat(currentWeather.getDescription());
+    public static String formatWeatherAPI(String lat, String lon) {
+        return String.format("%s%s/%s,%s", Constant.BASE_URL, BuildConfig.API_KEY, lat, lon);
     }
 
 }

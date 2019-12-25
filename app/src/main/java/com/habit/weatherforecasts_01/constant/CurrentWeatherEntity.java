@@ -3,22 +3,16 @@ package com.habit.weatherforecasts_01.constant;
 import androidx.annotation.StringDef;
 
 @StringDef({
-        CurrentWeatherEntity.ADDRESS,
-        CurrentWeatherEntity.TIMEZONE,
-        CurrentWeatherEntity.MAIN_WEATHER,
-        CurrentWeatherEntity.WEATHER_TEMP,
-        CurrentWeatherEntity.NUMBER_KELVIN,
+        CurrentWeatherEntity.CURRENT_OBJECT,
+        CurrentWeatherEntity.TIME,
+        CurrentWeatherEntity.TEMP,
         CurrentWeatherEntity.WEATHER,
-        CurrentWeatherEntity.MAIN_STATUS,
-        CurrentWeatherEntity.DESCRIPTION
+        CurrentWeatherEntity.ICON
 })
 public @interface CurrentWeatherEntity {
-    String ADDRESS = "name";
-    String TIMEZONE = "timezone";
-    String MAIN_WEATHER = "main";
-    String WEATHER_TEMP = "temp";
-    String NUMBER_KELVIN = "273.15f";
-    String WEATHER = "weather";
-    String MAIN_STATUS = "main";
-    String DESCRIPTION = "description";
+    String CURRENT_OBJECT = "currently";
+    String TIME = "time";
+    String TEMP = "temperature";
+    String WEATHER = "summary";
+    String ICON = "icon";
 }
