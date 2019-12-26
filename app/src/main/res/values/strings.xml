@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">WeatherForecasts_01</string>
     <string name="title_splash">Weather for you</string>
+    <string name="fragment_today_title">Today</string>
 </resources>

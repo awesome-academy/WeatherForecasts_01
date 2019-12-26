@@ -1,5 +1,9 @@
 package com.habit.weatherforecasts_01.screen.main;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,15 +13,21 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
-
 import com.google.android.material.tabs.TabLayout;
 import com.habit.weatherforecasts_01.R;
+import com.habit.weatherforecasts_01.screen.today.TodayFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ViewPager mViewPager;
+
+    public static Intent getIntent(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViews() {
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
 
-        ViewPager mViewPager = findViewById(R.id.view_pager);
+        mViewPager = findViewById(R.id.view_pager);
         setupViewPager(mViewPager);
 
         TabLayout mTabLayout = findViewById(R.id.tabs);
@@ -40,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        pagerAdapter.addFragment(new TodayFragment(), getString(R.string.fragment_today_title));
+        viewPager.setAdapter(pagerAdapter);
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -68,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             return mTitles.get(position);
         }
 
-        public void addFragment(Fragment fragment, String title){
+        public void addFragment(Fragment fragment, String title) {
             mFragments.add(fragment);
             mTitles.add(title);
         }

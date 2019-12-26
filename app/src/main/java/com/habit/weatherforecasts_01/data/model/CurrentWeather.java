@@ -3,29 +3,19 @@ package com.habit.weatherforecasts_01.data.model;
 import java.util.Date;
 
 public class CurrentWeather {
-    private String mAddress;
     private Date mDate;
     private int mTemp;
-    private String mStatus;
-    private String mDescription;
+    private String mWeather;
+    private String mIcon;
 
     public CurrentWeather() {
     }
 
-    public CurrentWeather(String address, Date date, int temp, String status, String description) {
-        mAddress = address;
+    public CurrentWeather(Date date, int temp, String weather, String icon) {
         mDate = date;
         mTemp = temp;
-        mStatus = status;
-        mDescription = description;
-    }
-
-    public String getAddress() {
-        return mAddress;
-    }
-
-    public void setAddress(String address) {
-        mAddress = address;
+        mWeather = weather;
+        mIcon = icon;
     }
 
     public Date getDate() {
@@ -44,20 +34,19 @@ public class CurrentWeather {
         mTemp = temp;
     }
 
-    public String getStatus() {
-        return mStatus;
+    public String getWeather() {
+        return mWeather;
     }
 
-    public void setMain(String status) {
-        mStatus = status;
+    public void setWeather(String weather) {
+        mWeather = weather;
     }
 
-    public String getDescription() {
-        return mDescription;
+    public String getIcon() {
+        return mIcon;
     }
 
-    public void setDescription(String description) {
-        mDescription = description;
+    public void setIcon(String icon) {
+        mIcon = icon;
     }
-
 }
