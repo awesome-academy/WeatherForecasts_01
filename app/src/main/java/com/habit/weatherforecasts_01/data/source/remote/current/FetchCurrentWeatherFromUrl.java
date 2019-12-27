@@ -1,4 +1,4 @@
-package com.habit.weatherforecasts_01.data.source.remote;
+package com.habit.weatherforecasts_01.data.source.remote.current;
 
 import android.os.AsyncTask;
 
@@ -73,6 +73,8 @@ public class FetchCurrentWeatherFromUrl extends AsyncTask<String, Void, CurrentW
         while ((line = br.readLine()) != null) {
             sb.append(line).append(Constant.BREAK_LINE);
         }
+        br.close();
+        connection.disconnect();
         return sb.toString();
     }
 

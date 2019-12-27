@@ -1,4 +1,4 @@
-package com.habit.weatherforecasts_01.data.source.remote;
+package com.habit.weatherforecasts_01.data.source.remote.current;
 
 import com.habit.weatherforecasts_01.data.source.CurrentWeatherDataSource;
 import com.habit.weatherforecasts_01.utils.StringUtil;

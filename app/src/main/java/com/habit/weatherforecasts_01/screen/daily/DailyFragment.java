@@ -1,4 +1,4 @@
-package com.habit.weatherforecasts_01.screen.hourly;
+package com.habit.weatherforecasts_01.screen.daily;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,31 +11,31 @@ import androidx.fragment.app.Fragment;
 
 import com.habit.weatherforecasts_01.R;
 import com.habit.weatherforecasts_01.constant.Constant;
-import com.habit.weatherforecasts_01.data.model.Hourly;
+import com.habit.weatherforecasts_01.data.model.Daily;
 
 import java.util.List;
 
-public class HourlyFragment extends Fragment implements HourlyContract.View {
+public class DailyFragment extends Fragment implements DailyContract.View {
 
-    private HourlyPresenter mHourlyPresenter;
+    private DailyPresenter mDailyPresenter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_hourly, container, false);
-        mHourlyPresenter = new HourlyPresenter(this);
-        mHourlyPresenter.getHourlyList(Constant.LATITUDE_HANOI, Constant.LONGITUDE_HANOI);
+        View view = inflater.inflate(R.layout.fragment_daily, container, false);
+        mDailyPresenter = new DailyPresenter(this);
+        mDailyPresenter.getDailyList(Constant.LATITUDE_HANOI, Constant.LONGITUDE_HANOI);
         return view;
     }
 
     @Override
-    public void onGetHourlySuccess(List<Hourly> hourlyList) {
+    public void onGetDailySuccess(List<Daily> dailyList) {
     }
 
     @Override
-    public void onGetHourlyFailure(String message) {
+    public void onGetDailyFailure(String message) {
 
     }
 }

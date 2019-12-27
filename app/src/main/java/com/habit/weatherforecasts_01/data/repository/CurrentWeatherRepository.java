@@ -1,7 +1,7 @@
 package com.habit.weatherforecasts_01.data.repository;
 
 import com.habit.weatherforecasts_01.data.source.CurrentWeatherDataSource;
-import com.habit.weatherforecasts_01.data.source.remote.CurrentRemoteDataSource;
+import com.habit.weatherforecasts_01.data.source.remote.current.CurrentRemoteDataSource;
 
 public class CurrentWeatherRepository {
     private static CurrentWeatherRepository sInstance;
