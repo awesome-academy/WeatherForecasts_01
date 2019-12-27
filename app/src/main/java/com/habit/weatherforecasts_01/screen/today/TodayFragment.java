@@ -36,7 +36,6 @@ public class TodayFragment extends Fragment implements TodayContract.View {
 
     @Override
     public void onGetCurrentSuccess(CurrentWeather currentWeather) {
-
     }
 
     @Override
