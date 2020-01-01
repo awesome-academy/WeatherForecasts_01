@@ -1,7 +1,20 @@
 <resources>
     <string name="app_name">WeatherForecasts_01</string>
     <string name="title_splash">Weather for you</string>
-    <string name="title_today_fragment">Today</string>
-    <string name="title_hourly_fragment">Hourly</string>
-    <string name="title_daily_fragment">Daily</string>
+    <string name="title_today">Today</string>
+    <string name="title_hourly">Hourly</string>
+    <string name="title_daily">Daily</string>
+
+    <string name="default_current_temp">17°</string>
+    <string name="default_current_weather">Clear</string>
+    <string name="default_daily_temp">29° / 14°</string>
+    <string name="default_time">Hanoi, 18:26</string>
+    <string name="default_date">2019, Fri Dec 13</string>
+    <string name="default_temp_max">29°</string>
+    <string name="default_temp_min">14°</string>
+
+    <string name="icon_weather">Weather Icon</string>
+    <string name="icon_temp_max">Icon Temp Max</string>
+    <string name="icon_temp_min">Icon Temp Min</string>
+    <string name="icon_redirect_load_all">Load all</string>
 </resources>
