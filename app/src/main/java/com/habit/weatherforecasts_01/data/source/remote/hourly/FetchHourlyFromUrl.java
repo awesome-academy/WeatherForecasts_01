@@ -93,7 +93,7 @@ public class FetchHourlyFromUrl extends AsyncTask<String, Void, List<Hourly>> {
             return;
         }
         if (mException == null) {
-            mListener.onFetchDataSuccess(hourlies);
+            mListener.onFetchDataHourlySuccess(hourlies);
         } else {
             mListener.onFetchDataFailure(mException);
         }

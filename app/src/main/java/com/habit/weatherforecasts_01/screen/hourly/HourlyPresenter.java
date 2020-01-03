@@ -7,7 +7,7 @@ import com.habit.weatherforecasts_01.data.source.HourlyDataSource;
 import java.util.List;
 
 public class HourlyPresenter implements HourlyContract.Presenter,
-        HourlyDataSource.OnFetchDataListener<Hourly> {
+        HourlyDataSource.OnFetchDataListener {
 
     private HourlyContract.View mView;
     private HourlyRepository mHourlyRepository;
@@ -18,8 +18,8 @@ public class HourlyPresenter implements HourlyContract.Presenter,
     }
 
     @Override
-    public void onFetchDataSuccess(List<Hourly> data) {
-        mView.onGetHourlySuccess(data);
+    public void onFetchDataHourlySuccess(List<Hourly> dataHourly) {
+        mView.onGetHourlySuccess(dataHourly);
     }
 
     @Override

@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        pagerAdapter.addFragment(new TodayFragment(), getString(R.string.title_today_fragment));
-        pagerAdapter.addFragment(new HourlyFragment(), getString(R.string.title_hourly_fragment));
-        pagerAdapter.addFragment(new DailyFragment(), getString(R.string.title_daily_fragment));
+        pagerAdapter.addFragment(new TodayFragment(), getString(R.string.title_today));
+        pagerAdapter.addFragment(new HourlyFragment(), getString(R.string.title_hourly));
+        pagerAdapter.addFragment(new DailyFragment(), getString(R.string.title_daily));
         viewPager.setAdapter(pagerAdapter);
     }
 

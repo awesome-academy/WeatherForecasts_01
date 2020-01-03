@@ -6,8 +6,7 @@ import com.habit.weatherforecasts_01.data.source.DailyDataSource;
 
 import java.util.List;
 
-public class DailyPresenter implements DailyContract.Presenter,
-        DailyDataSource.OnFetchDataListener<Daily> {
+public class DailyPresenter implements DailyContract.Presenter, DailyDataSource.OnFetchDataListener {
 
     private DailyContract.View mView;
     private DailyRepository mDailyRepository;

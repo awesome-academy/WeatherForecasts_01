@@ -3,10 +3,48 @@ package com.habit.weatherforecasts_01.utils;
 import com.habit.weatherforecasts_01.BuildConfig;
 import com.habit.weatherforecasts_01.constant.Constant;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class StringUtil {
 
     public static String formatWeatherAPI(String lat, String lon) {
         return String.format("%s%s/%s,%s", Constant.BASE_URL, BuildConfig.API_KEY, lat, lon);
     }
 
+    public static int getCelsiusFromFahrenheit(int degreeF) {
+        int degreeC = Math.round((degreeF - 32) / 1.8f);
+        return degreeC;
+    }
+
+    public static String getFahrenheit(int degreeF) {
+        return degreeF + Constant.DEGREE;
+    }
+
+    public static String getCelsius(int degreeF) {
+        int degreeC = getCelsiusFromFahrenheit(degreeF);
+        return degreeC + Constant.DEGREE;
+    }
+
+    public static String getTempDayF(int tempMaxF, int tempMinF) {
+        return getFahrenheit(tempMaxF) + Constant.SPACE
+                + Constant.SLASH + Constant.SPACE + getFahrenheit(tempMinF);
+    }
+
+    public static String getTempDayC(int tempMaxF, int tempMinF) {
+        return getCelsius(tempMaxF) + Constant.SPACE
+                + Constant.SLASH + Constant.SPACE + getCelsius(tempMinF);
+    }
+
+    public static String getStringDayFromDate(Date date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(Constant.FORMAT_DATE);
+        String textDate = dateFormat.format(date);
+        return textDate;
+    }
+
+    public static String getStringHourFromDate(Date date) {
+        SimpleDateFormat hourFormat = new SimpleDateFormat(Constant.FORMAT_HOUR);
+        String textHour = hourFormat.format(date);
+        return textHour;
+    }
 }
