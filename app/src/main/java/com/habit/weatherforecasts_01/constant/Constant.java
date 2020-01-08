@@ -10,12 +10,13 @@ public class Constant {
     public static final int CONNECT_TIME_OUT = 5000;
     public static final int READ_TIME_OUT = 5000;
     public static final String BREAK_LINE = "\n";
-    public static final Long S_TO_MILIS = 1000L;
+    public static final int TIME_DETAL = 1000;
     public static final String SPACE = " ";
 
-    public static final String FORMAT_DATE = "YYYY, EEE MMM dd";
+    public static final String FORMAT_YEAR_MONTH_DAY = "YYYY, EEE MMM dd";
     public static final String FORMAT_HOUR = "HH:mm";
     public static final String FORMAT_EEE = "EEE";
+    public static final String FORMAT_DAY = "MMM dd";
 
     public static final String DEGREE = "°";
     public static final String SLASH = "/";

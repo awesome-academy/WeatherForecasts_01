@@ -75,7 +75,7 @@ public class TodayFragment extends Fragment implements TodayContract.View {
         mTextWeatherNow.setText(currentWeather.getWeather());
 
         Date date = currentWeather.getDate();
-        mTextDayNow.setText(StringUtil.getStringDayFromDate(date));
+        mTextDayNow.setText(StringUtil.getStringYearMonthDayFromDate(date));
         mTextHourNow.setText(StringUtil.getStringHourFromDate(date));
     }
 

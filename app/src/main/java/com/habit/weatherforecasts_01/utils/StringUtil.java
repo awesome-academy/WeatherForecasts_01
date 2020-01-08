@@ -43,10 +43,16 @@ public class StringUtil {
         return DayInWeek;
     }
 
+    public static String getStringYearMonthDayFromDate(Date date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(Constant.FORMAT_YEAR_MONTH_DAY);
+        String textYearMonthDay = dateFormat.format(date);
+        return textYearMonthDay;
+    }
+
     public static String getStringDayFromDate(Date date) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(Constant.FORMAT_DATE);
-        String textDate = dateFormat.format(date);
-        return textDate;
+        SimpleDateFormat dayFormat = new SimpleDateFormat(Constant.FORMAT_DAY);
+        String textDay = dayFormat.format(date);
+        return textDay;
     }
 
     public static String getStringHourFromDate(Date date) {
