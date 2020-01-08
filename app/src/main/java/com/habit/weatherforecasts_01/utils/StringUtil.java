@@ -55,6 +55,12 @@ public class StringUtil {
         return textDay;
     }
 
+    public static String getSecondStringDayFromDate(Date date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(Constant.FORMAT_DAY_2);
+        String textDayEEEEE = dateFormat.format(date);
+        return textDayEEEEE;
+    }
+
     public static String getStringHourFromDate(Date date) {
         SimpleDateFormat hourFormat = new SimpleDateFormat(Constant.FORMAT_HOUR);
         String textHour = hourFormat.format(date);
