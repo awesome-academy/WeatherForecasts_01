@@ -54,7 +54,7 @@ public class FetchHourlyFromUrl extends AsyncTask<String, Void, List<Hourly>> {
             JSONObject objectHourly = (JSONObject) jsonArray.get(i);
 
             String time = objectHourly.getString(HourlyEntity.TIME);
-            Date date = new Date(Long.parseLong(time) * Constant.S_TO_MILIS);
+            Date date = new Date(Long.parseLong(time) * Constant.TIME_DETAL);
 
             String temperature = objectHourly.getString(HourlyEntity.TEMP);
             int temp = Math.round(Float.parseFloat(temperature));

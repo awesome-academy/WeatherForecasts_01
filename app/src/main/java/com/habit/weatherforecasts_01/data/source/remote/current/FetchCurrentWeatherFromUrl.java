@@ -46,7 +46,7 @@ public class FetchCurrentWeatherFromUrl extends AsyncTask<String, Void, CurrentW
         JSONObject currently = jsonObject.getJSONObject(CurrentWeatherEntity.CURRENT_OBJECT);
 
         String time = currently.getString(CurrentWeatherEntity.TIME);
-        Date date = new Date(Long.parseLong(time) * Constant.S_TO_MILIS);
+        Date date = new Date(Long.parseLong(time) * Constant.TIME_DETAL);
 
         String temperature = currently.getString(CurrentWeatherEntity.TEMP);
         int temp = Math.round(Float.parseFloat(temperature));

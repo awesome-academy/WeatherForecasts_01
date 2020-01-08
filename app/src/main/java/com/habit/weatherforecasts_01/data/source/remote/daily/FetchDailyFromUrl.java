@@ -55,7 +55,7 @@ public class FetchDailyFromUrl extends AsyncTask<String, Void, List<Daily>> {
             JSONObject objectDaily = (JSONObject) jsonArray.get(i);
 
             String time = objectDaily.getString(DailyEntity.TIME);
-            Date date = new Date(Long.parseLong(time) * Constant.S_TO_MILIS);
+            Date date = new Date(Long.parseLong(time) * Constant.TIME_DETAL);
 
             String weather = objectDaily.getString(DailyEntity.WEATHER);
             String icon = objectDaily.getString(DailyEntity.ICON);
