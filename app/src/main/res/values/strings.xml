@@ -6,13 +6,17 @@
     <string name="title_daily">Daily</string>
 
     <string name="default_current_temp">17°</string>
-    <string name="default_current_weather">Clear</string>
     <string name="default_daily_temp">29° / 14°</string>
+    <string name="default_temp_max">29°</string>
+    <string name="default_temp_min">14°</string>
+
+    <string name="default_current_weather">Clear</string>
+    <string name="default_weather_daily">Partly cloudy throughout the day.</string>
+
     <string name="default_time">18:00</string>
     <string name="default_date">2019, Fri Dec 13</string>
     <string name="default_day">Dec 13</string>
-    <string name="default_temp_max">29°</string>
-    <string name="default_temp_min">14°</string>
+    <string name="default_day_EEEEE">Friday, Dec 13</string>
     <string name="default_day_in_week">Fri</string>
 
     <string name="icon_weather">Weather Icon</string>

@@ -17,6 +17,7 @@ public class Constant {
     public static final String FORMAT_HOUR = "HH:mm";
     public static final String FORMAT_EEE = "EEE";
     public static final String FORMAT_DAY = "MMM dd";
+    public static final String FORMAT_DAY_2 = "EEE, MMM dd";
 
     public static final String DEGREE = "°";
     public static final String SLASH = "/";
