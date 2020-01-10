@@ -13,6 +13,11 @@ public class StringUtil {
         return String.format("%s%s/%s,%s", Constant.BASE_URL, BuildConfig.API_KEY, lat, lon);
     }
 
+    public static String formatAirQualityAPI(String lat, String lon) {
+        return String.format("%s%s;%s%s%s",
+                Constant.BASE_URL_AQI, lat, lon, Constant.GET_TOKEN_AQI, BuildConfig.AQI_TOKEN);
+    }
+
     public static int getCelsiusFromFahrenheit(int degreeF) {
         int degreeC = Math.round((degreeF - 32) / 1.8f);
         return degreeC;

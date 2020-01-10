@@ -3,8 +3,10 @@ package com.habit.weatherforecasts_01.constant;
 public class Constant {
 
     public static final String BASE_URL = "https://api.darksky.net/forecast/";
+    public static final String BASE_URL_AQI = "http://api.waqi.info/feed/geo:";
     public static final String LATITUDE_HANOI = "21.028511";
     public static final String LONGITUDE_HANOI = "105.804817";
+    public static final String GET_TOKEN_AQI = "/?token=";
 
     public static final String REQUEST_METHOD_GET = "GET";
     public static final int CONNECT_TIME_OUT = 5000;
