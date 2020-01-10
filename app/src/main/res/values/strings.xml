@@ -4,6 +4,7 @@
     <string name="title_today">Today</string>
     <string name="title_hourly">Hourly</string>
     <string name="title_daily">Daily</string>
+    <string name="title_air_quality">Air Quality</string>
 
     <string name="default_current_temp">17°</string>
     <string name="default_daily_temp">29° / 14°</string>

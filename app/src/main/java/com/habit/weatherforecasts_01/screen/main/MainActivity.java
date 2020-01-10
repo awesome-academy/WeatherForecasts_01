@@ -15,6 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.habit.weatherforecasts_01.R;
+import com.habit.weatherforecasts_01.screen.airquality.AirqualityFragment;
 import com.habit.weatherforecasts_01.screen.daily.DailyFragment;
 import com.habit.weatherforecasts_01.screen.hourly.HourlyFragment;
 import com.habit.weatherforecasts_01.screen.today.TodayFragment;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         pagerAdapter.addFragment(new TodayFragment(), getString(R.string.title_today));
         pagerAdapter.addFragment(new HourlyFragment(), getString(R.string.title_hourly));
         pagerAdapter.addFragment(new DailyFragment(), getString(R.string.title_daily));
+        pagerAdapter.addFragment(new AirqualityFragment(),getString(R.string.title_air_quality));
         viewPager.setAdapter(pagerAdapter);
     }
 

@@ -24,7 +24,7 @@
             app:tabGravity="fill"
             app:tabIconTint="@android:color/white"
             app:tabInlineLabel="true"
-            app:tabMode="fixed"
+            app:tabMode="scrollable"
             app:tabTextColor="@android:color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
