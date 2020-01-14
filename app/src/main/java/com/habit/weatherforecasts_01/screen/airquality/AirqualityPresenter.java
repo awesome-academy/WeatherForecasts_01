@@ -5,7 +5,7 @@ import com.habit.weatherforecasts_01.data.repository.AirQualityRepository;
 import com.habit.weatherforecasts_01.data.source.AirQualityDataSource;
 
 public class AirqualityPresenter implements AirqualityContract.Presenter,
-        AirQualityDataSource.OnFetchDataListener<AirQuality> {
+        AirQualityDataSource.OnFetchDataListener {
     private AirqualityContract.View mView;
     private AirQualityRepository mAirQualityRepository;
 
@@ -15,7 +15,7 @@ public class AirqualityPresenter implements AirqualityContract.Presenter,
     }
 
     @Override
-    public void onFetchDataSuccess(AirQuality data) {
+    public void onFetchAirQualitySuccess(AirQuality data) {
         mView.onGetAirQualitySuccess(data);
     }
 

@@ -1,240 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layout_fragment_today"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_night">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/image_weather_now"
-        android:layout_width="@dimen/dp_128"
-        android:layout_height="@dimen/dp_128"
-        android:layout_marginTop="@dimen/dp_24"
-        android:contentDescription="@string/icon_weather"
-        app:layout_constraintEnd_toStartOf="@+id/text_temp_now"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_cloudy" />
-
-    <TextView
-        android:id="@+id/text_temp_now"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_fragment_today"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/dp_124"
-        android:fontFamily="@font/lato_regular"
-        android:text="@string/default_current_temp"
-        android:textColor="@color/color_accent"
-        android:textSize="@dimen/sp_48"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/image_weather_now" />
+        android:background="@drawable/background_night">
 
-    <TextView
-        android:id="@+id/text_weather_now"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lato_regular"
-        android:text="@string/default_current_weather"
-        android:textColor="@color/color_accent"
-        android:textSize="@dimen/sp_20"
-        app:layout_constraintBottom_toTopOf="@+id/text_temp_day"
-        app:layout_constraintStart_toStartOf="@+id/text_temp_now"
-        app:layout_constraintTop_toBottomOf="@+id/text_temp_now" />
+        <ImageView
+            android:id="@+id/image_weather_now"
+            android:layout_width="@dimen/dp_128"
+            android:layout_height="@dimen/dp_128"
+            android:layout_marginTop="@dimen/dp_24"
+            android:contentDescription="@string/icon_weather"
+            app:layout_constraintEnd_toStartOf="@+id/text_temp_now"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_cloudy" />
 
-    <TextView
-        android:id="@+id/text_temp_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lato_regular"
-        android:text="@string/default_daily_temp"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintBottom_toBottomOf="@+id/image_weather_now"
-        app:layout_constraintStart_toStartOf="@+id/text_weather_now" />
+        <TextView
+            android:id="@+id/text_temp_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_124"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/default_current_temp"
+            android:textColor="@color/color_accent"
+            android:textSize="@dimen/sp_48"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/image_weather_now" />
 
-    <View
-        android:id="@+id/line_white"
-        android:layout_width="@dimen/dp_360"
-        android:layout_height="@dimen/dp_1"
-        android:layout_marginTop="@dimen/dp_60"
-        android:background="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_weather_now" />
+        <TextView
+            android:id="@+id/text_weather_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/default_current_weather"
+            android:textColor="@color/color_accent"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toBottomOf="@+id/image_weather_now"
+            app:layout_constraintStart_toStartOf="@+id/text_temp_now"
+            app:layout_constraintTop_toBottomOf="@+id/text_temp_now" />
 
-    <TextView
-        android:id="@+id/text_hour_now"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lato_regular"
-        android:text="@string/default_time"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/sp_20"
-        app:layout_constraintBottom_toTopOf="@+id/line_white"
-        app:layout_constraintStart_toStartOf="@+id/line_white" />
+        <TextView
+            android:id="@+id/text_weather_day"
+            android:layout_width="@dimen/dp_160"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/default_weather_daily"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="@+id/text_weather_now"
+            app:layout_constraintTop_toBottomOf="@+id/text_weather_now" />
 
-    <TextView
-        android:id="@+id/text_day_now"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lato_regular"
-        android:text="@string/default_date"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/sp_20"
-        app:layout_constraintBottom_toTopOf="@+id/line_white"
-        app:layout_constraintEnd_toEndOf="@+id/line_white" />
+        <View
+            android:id="@+id/line_white"
+            android:layout_width="@dimen/dp_360"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_160"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_weather_now" />
 
-    <ImageView
-        android:id="@+id/icon_temp_max"
-        android:layout_width="@dimen/dp_16"
-        android:layout_height="@dimen/dp_16"
-        android:layout_marginStart="@dimen/dp_24"
-        android:layout_marginTop="@dimen/dp_16"
-        android:contentDescription="@string/icon_temp_max"
-        app:layout_constraintStart_toStartOf="@+id/line_white"
-        app:layout_constraintTop_toBottomOf="@+id/line_white"
-        app:srcCompat="@drawable/up" />
+        <TextView
+            android:id="@+id/text_address_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/default_address"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toTopOf="@+id/line_white"
+            app:layout_constraintStart_toStartOf="@+id/line_white" />
 
-    <TextView
-        android:id="@+id/text_temp_max"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_8"
-        android:fontFamily="@font/lato_regular"
-        android:text="@string/default_temp_max"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintBottom_toBottomOf="@+id/icon_temp_max"
-        app:layout_constraintStart_toEndOf="@+id/icon_temp_max" />
+        <TextView
+            android:id="@+id/text_day_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/default_date"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toTopOf="@+id/line_white"
+            app:layout_constraintEnd_toEndOf="@+id/line_white" />
 
-    <TextView
-        android:id="@+id/text_temp_min"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_8"
-        android:fontFamily="@font/lato_regular"
-        android:text="@string/default_temp_min"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintBottom_toBottomOf="@+id/icon_temp_min"
-        app:layout_constraintStart_toEndOf="@+id/icon_temp_min" />
+        <ImageView
+            android:id="@+id/icon_temp_max"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_16"
+            android:contentDescription="@string/icon_temp_max"
+            app:layout_constraintStart_toStartOf="@+id/line_white"
+            app:layout_constraintTop_toBottomOf="@+id/line_white"
+            app:srcCompat="@drawable/up" />
 
-    <ImageView
-        android:id="@+id/icon_temp_min"
-        android:layout_width="@dimen/dp_16"
-        android:layout_height="@dimen/dp_16"
-        android:layout_marginStart="@dimen/dp_32"
-        android:layout_marginTop="@dimen/dp_16"
-        android:contentDescription="@string/icon_temp_min"
-        app:layout_constraintStart_toEndOf="@+id/text_temp_max"
-        app:layout_constraintTop_toBottomOf="@+id/line_white"
-        app:srcCompat="@drawable/down" />
+        <TextView
+            android:id="@+id/text_temp_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/default_temp_max"
+            android:textColor="@color/color_accent"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_temp_max"
+            app:layout_constraintStart_toEndOf="@+id/icon_temp_max" />
 
-    <View
-        android:id="@+id/view_hourly_bar"
-        android:layout_width="@dimen/dp_388"
-        android:layout_height="@dimen/dp_132"
-        android:layout_marginTop="@dimen/dp_60"
-        android:background="@drawable/shape_forecast_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line_white" />
+        <TextView
+            android:id="@+id/text_temp_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/default_temp_min"
+            android:textColor="@color/color_accent"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_temp_min"
+            app:layout_constraintStart_toEndOf="@+id/icon_temp_min" />
 
-    <View
-        android:id="@+id/line_gray"
-        android:layout_width="@dimen/dp_360"
-        android:layout_height="@dimen/dp_0_2"
-        android:layout_marginTop="@dimen/dp_40"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view_hourly_bar" />
+        <ImageView
+            android:id="@+id/icon_temp_min"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_32"
+            android:layout_marginTop="@dimen/dp_16"
+            android:contentDescription="@string/icon_temp_min"
+            app:layout_constraintStart_toEndOf="@+id/text_temp_max"
+            app:layout_constraintTop_toBottomOf="@+id/line_white"
+            app:srcCompat="@drawable/down" />
 
-    <TextView
-        android:id="@+id/title_hourly_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lato_regular"
-        android:text="@string/title_hourly"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintBottom_toTopOf="@+id/line_gray"
-        app:layout_constraintStart_toStartOf="@+id/line_gray"
-        app:layout_constraintTop_toTopOf="@+id/view_hourly_bar" />
+        <View
+            android:id="@+id/view_hourly_bar"
+            android:layout_width="@dimen/dp_388"
+            android:layout_height="@dimen/dp_160"
+            android:layout_marginTop="@dimen/dp_60"
+            android:background="@drawable/shape_forecast_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_white" />
 
-    <ImageView
-        android:id="@+id/icon_load_hourly"
-        android:layout_width="@dimen/dp_24"
-        android:layout_height="@dimen/dp_24"
-        android:contentDescription="@string/icon_redirect_load_all"
-        app:layout_constraintBottom_toTopOf="@+id/line_gray"
-        app:layout_constraintEnd_toEndOf="@+id/line_gray"
-        app:layout_constraintTop_toTopOf="@+id/view_hourly_bar"
-        app:srcCompat="@drawable/ic_chevron_right_black_16dp" />
+        <View
+            android:id="@+id/line_gray"
+            android:layout_width="@dimen/dp_360"
+            android:layout_height="@dimen/dp_0_2"
+            android:layout_marginTop="@dimen/dp_52"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_hourly_bar" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        android:id="@+id/recycler_hourly_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dp_64"
-        app:layout_constraintBottom_toBottomOf="@+id/view_hourly_bar"
-        app:layout_constraintEnd_toEndOf="@+id/line_gray"
-        app:layout_constraintStart_toStartOf="@+id/line_gray"
-        app:layout_constraintTop_toTopOf="@+id/line_gray" />
+        <TextView
+            android:id="@+id/title_hourly_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/title_hourly"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toTopOf="@+id/line_gray"
+            app:layout_constraintStart_toStartOf="@+id/line_gray"
+            app:layout_constraintTop_toTopOf="@+id/view_hourly_bar" />
 
-    <View
-        android:id="@+id/view_daily_bar"
-        android:layout_width="@dimen/dp_388"
-        android:layout_height="@dimen/dp_132"
-        android:layout_marginTop="@dimen/dp_8"
-        android:background="@drawable/shape_forecast_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_hourly_bar" />
+        <ImageView
+            android:id="@+id/icon_load_hourly"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:contentDescription="@string/icon_redirect_load_all"
+            app:layout_constraintBottom_toTopOf="@+id/line_gray"
+            app:layout_constraintEnd_toEndOf="@+id/line_gray"
+            app:layout_constraintTop_toTopOf="@+id/view_hourly_bar"
+            app:srcCompat="@drawable/ic_chevron_right_black_16dp" />
 
-    <View
-        android:id="@+id/line_gray_two"
-        android:layout_width="@dimen/dp_360"
-        android:layout_height="@dimen/dp_0_2"
-        android:layout_marginTop="@dimen/dp_40"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view_daily_bar" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_hourly_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_64"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@+id/view_hourly_bar"
+            app:layout_constraintEnd_toEndOf="@+id/line_gray"
+            app:layout_constraintStart_toStartOf="@+id/line_gray"
+            app:layout_constraintTop_toTopOf="@+id/line_gray" />
 
-    <TextView
-        android:id="@+id/title_daily_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lato_regular"
-        android:text="@string/title_daily"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/sp_16"
-        app:layout_constraintBottom_toTopOf="@+id/line_gray_two"
-        app:layout_constraintStart_toStartOf="@+id/line_gray_two"
-        app:layout_constraintTop_toTopOf="@+id/view_daily_bar" />
+        <View
+            android:id="@+id/view_daily_bar"
+            android:layout_width="@dimen/dp_388"
+            android:layout_height="@dimen/dp_160"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_32"
+            android:background="@drawable/shape_forecast_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_hourly_bar" />
 
-    <ImageView
-        android:id="@+id/icon_load_daily"
-        android:layout_width="@dimen/dp_24"
-        android:layout_height="@dimen/dp_24"
-        android:contentDescription="@string/icon_redirect_load_all"
-        app:layout_constraintBottom_toTopOf="@+id/line_gray_two"
-        app:layout_constraintEnd_toEndOf="@+id/line_gray_two"
-        app:layout_constraintTop_toTopOf="@+id/view_daily_bar"
-        app:srcCompat="@drawable/ic_chevron_right_black_16dp" />
+        <View
+            android:id="@+id/line_gray_two"
+            android:layout_width="@dimen/dp_360"
+            android:layout_height="@dimen/dp_0_2"
+            android:layout_marginTop="@dimen/dp_52"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_daily_bar" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        android:id="@+id/recycler_daily_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dp_64"
-        app:layout_constraintBottom_toBottomOf="@+id/view_daily_bar"
-        app:layout_constraintEnd_toEndOf="@+id/line_gray_two"
-        app:layout_constraintStart_toStartOf="@+id/line_gray_two"
-        app:layout_constraintTop_toTopOf="@+id/line_gray_two" />
+        <TextView
+            android:id="@+id/title_daily_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/title_daily"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toTopOf="@+id/line_gray_two"
+            app:layout_constraintStart_toStartOf="@+id/line_gray_two"
+            app:layout_constraintTop_toTopOf="@+id/view_daily_bar" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/icon_load_daily"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:contentDescription="@string/icon_redirect_load_all"
+            app:layout_constraintBottom_toTopOf="@+id/line_gray_two"
+            app:layout_constraintEnd_toEndOf="@+id/line_gray_two"
+            app:layout_constraintTop_toTopOf="@+id/view_daily_bar"
+            app:srcCompat="@drawable/ic_chevron_right_black_16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_daily_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_64"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@+id/view_daily_bar"
+            app:layout_constraintEnd_toEndOf="@+id/line_gray_two"
+            app:layout_constraintStart_toStartOf="@+id/line_gray_two"
+            app:layout_constraintTop_toTopOf="@+id/line_gray_two" />
+
+        <TextView
+            android:id="@+id/text_status_aq_today"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_12"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/default_status_aq"
+            android:textColor="@android:color/holo_purple"
+            app:layout_constraintStart_toEndOf="@+id/logo_aq"
+            app:layout_constraintTop_toBottomOf="@+id/line_white" />
+
+        <ImageView
+            android:id="@+id/logo_aq"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_136"
+            android:contentDescription="@string/icon_air_quality"
+            app:layout_constraintBottom_toBottomOf="@+id/text_number_aq_today"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_number_aq_today"
+            app:srcCompat="@drawable/logo_aq" />
+
+        <TextView
+            android:id="@+id/text_number_aq_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_56"
+            android:layout_marginTop="@dimen/dp_12"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/default_number_aq"
+            android:textColor="@android:color/holo_purple"
+            app:layout_constraintStart_toEndOf="@+id/text_temp_min"
+            app:layout_constraintTop_toBottomOf="@+id/line_white" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

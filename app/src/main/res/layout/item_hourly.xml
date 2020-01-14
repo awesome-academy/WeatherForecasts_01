@@ -38,6 +38,7 @@
         android:fontFamily="@font/lato_regular"
         android:text="@string/default_day"
         android:textColor="@color/color_accent"
+        android:textSize="@dimen/sp_10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/icon_weather_hourly"
         app:layout_constraintTop_toBottomOf="@+id/text_hour_hourly" />
@@ -48,7 +49,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/lato_regular"
         android:text="@string/default_current_weather"
-        android:textColor="@color/color_accent"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/sp_10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

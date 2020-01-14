@@ -1,9 +1,11 @@
 package com.habit.weatherforecasts_01.data.source;
 
+import com.habit.weatherforecasts_01.data.model.AirQuality;
+
 public interface AirQualityDataSource {
 
-    interface OnFetchDataListener<T> {
-        void onFetchDataSuccess(T data);
+    interface OnFetchDataListener {
+        void onFetchAirQualitySuccess(AirQuality data);
 
         void onFetchDataFailure(Exception e);
     }

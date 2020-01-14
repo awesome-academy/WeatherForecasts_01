@@ -1,5 +1,6 @@
 package com.habit.weatherforecasts_01.screen.hourly;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,7 @@ import com.habit.weatherforecasts_01.utils.StringUtil;
 
 import java.util.List;
 
-public class HourlyAdapter extends RecyclerView.Adapter<HourlyAdapter.ViewHolder>{
+public class HourlyAdapter extends RecyclerView.Adapter<HourlyAdapter.ViewHolder> {
     private List<Hourly> mHourlyList;
 
     public HourlyAdapter(List<Hourly> hourlyList) {

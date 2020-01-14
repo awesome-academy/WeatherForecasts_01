@@ -1,9 +1,11 @@
 package com.habit.weatherforecasts_01.data.source;
 
+import com.habit.weatherforecasts_01.data.model.CurrentWeather;
+
 public interface CurrentWeatherDataSource {
 
-    interface OnFetchDataListener<T> {
-        void onFetchDataSuccess(T data);
+    interface OnFetchDataListener {
+        void onFetchDataSuccess(CurrentWeather data);
 
         void onFetchDataFailure(Exception e);
     }
