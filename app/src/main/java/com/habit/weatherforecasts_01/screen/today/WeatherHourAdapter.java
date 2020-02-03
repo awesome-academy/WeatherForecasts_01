@@ -1,5 +1,6 @@
 package com.habit.weatherforecasts_01.screen.today;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

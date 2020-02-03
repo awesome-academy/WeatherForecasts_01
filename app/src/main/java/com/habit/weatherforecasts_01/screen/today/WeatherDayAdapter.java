@@ -1,5 +1,6 @@
 package com.habit.weatherforecasts_01.screen.today;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,6 @@ import java.util.List;
 
 public class WeatherDayAdapter extends RecyclerView.Adapter<WeatherDayAdapter.ViewHolder> {
     private List<Daily> mDailyList;
-
     public WeatherDayAdapter(List<Daily> dailyList) {
         mDailyList = dailyList;
     }
@@ -36,7 +36,8 @@ public class WeatherDayAdapter extends RecyclerView.Adapter<WeatherDayAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Daily daily = mDailyList.get(position);
         holder.mTextDayInWeekWd.setText(StringUtil.getDayInWeekFromDate(daily.getDate()));
-        holder.mIconWeatherWd.setImageResource(StringUtil.getResIdOfIconFromName(daily.getIcon()));
+        holder.mIconWeatherWd.setImageResource(
+                StringUtil.getResIdOfIconFromName(daily.getIcon()));
         holder.mTextTempDayWd.setText(
                 StringUtil.getTempDayC(daily.getTempMax(), daily.getTempMin()));
     }

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.habit.weatherforecasts_01.R;
 import com.habit.weatherforecasts_01.constant.Constant;
+import com.habit.weatherforecasts_01.data.model.AirQuality;
 import com.habit.weatherforecasts_01.data.model.CurrentWeather;
 import com.habit.weatherforecasts_01.data.model.Daily;
 import com.habit.weatherforecasts_01.data.model.Hourly;
@@ -35,10 +36,13 @@ public class TodayFragment extends Fragment implements TodayContract.View {
     private TextView mTextTempNow;
     private TextView mTextWeatherNow;
     private TextView mTextDayNow;
-    private TextView mTextHourNow;
-    private TextView mTextTempDay;
+    private TextView mTextAddressNow;
+    private TextView mTextWeatherDay;
     private TextView mTextTempMax;
     private TextView mTextTempMin;
+
+    private TextView mTextNumberAqToday;
+    private TextView mTextStatusAqToday;
 
     @Nullable
     @Override
@@ -46,14 +50,19 @@ public class TodayFragment extends Fragment implements TodayContract.View {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_today, container, false);
+
         mImageWeatherNow = view.findViewById(R.id.image_weather_now);
         mTextTempNow = view.findViewById(R.id.text_temp_now);
         mTextWeatherNow = view.findViewById(R.id.text_weather_now);
+        mTextWeatherDay = view.findViewById(R.id.text_weather_day);
+
+        mTextAddressNow = view.findViewById(R.id.text_address_now);
         mTextDayNow = view.findViewById(R.id.text_day_now);
-        mTextHourNow = view.findViewById(R.id.text_hour_now);
-        mTextTempDay = view.findViewById(R.id.text_temp_day);
         mTextTempMax = view.findViewById(R.id.text_temp_max);
         mTextTempMin = view.findViewById(R.id.text_temp_min);
+        mTextNumberAqToday = view.findViewById(R.id.text_number_aq_today);
+        mTextStatusAqToday = view.findViewById(R.id.text_status_aq_today);
+
         mRecyclerHourBar = view.findViewById(R.id.recycler_hourly_bar);
         mRecyclerDayBar = view.findViewById(R.id.recycler_daily_bar);
 
@@ -61,7 +70,15 @@ public class TodayFragment extends Fragment implements TodayContract.View {
         mTodayPresenter.getCurrentWeather(Constant.LATITUDE_HANOI, Constant.LONGITUDE_HANOI);
         mTodayPresenter.getDailyList(Constant.LATITUDE_HANOI, Constant.LONGITUDE_HANOI);
         mTodayPresenter.getHourlyList(Constant.LATITUDE_HANOI, Constant.LONGITUDE_HANOI);
+        mTodayPresenter.getAirQuality(Constant.LATITUDE_HANOI, Constant.LONGITUDE_HANOI);
         return view;
+    }
+
+    @Override
+    public void onGetAirQualitySuccess(AirQuality airQuality) {
+        int aqi = airQuality.getAqi();
+        mTextNumberAqToday.setText(String.valueOf(aqi));
+        mTextStatusAqToday.setText(StringUtil.getStatusFromAqi(aqi, getContext()));
     }
 
     @Override
@@ -76,12 +93,10 @@ public class TodayFragment extends Fragment implements TodayContract.View {
 
         Date date = currentWeather.getDate();
         mTextDayNow.setText(StringUtil.getStringYearMonthDayFromDate(date));
-        mTextHourNow.setText(StringUtil.getStringHourFromDate(date));
     }
 
     @Override
     public void onGetDataFailure(String message) {
-
     }
 
     @Override
@@ -98,13 +113,13 @@ public class TodayFragment extends Fragment implements TodayContract.View {
 
     @Override
     public void onGetDailySuccess(List<Daily> dailyList) {
-        int tempMaxF = dailyList.get(Constant.INDEX_0).getTempMax();
-        mTextTempMax.setText(StringUtil.getCelsius(tempMaxF));
+        int tempMaxInTodayF = dailyList.get(Constant.INDEX_0).getTempMax();
+        mTextTempMax.setText(StringUtil.getCelsius(tempMaxInTodayF));
 
-        int tempMinF = dailyList.get(Constant.INDEX_0).getTempMin();
-        mTextTempMin.setText(StringUtil.getCelsius(tempMinF));
+        int tempMinInTodayF = dailyList.get(Constant.INDEX_0).getTempMin();
+        mTextTempMin.setText(StringUtil.getCelsius(tempMinInTodayF));
 
-        mTextTempDay.setText(StringUtil.getTempDayC(tempMaxF, tempMinF));
+        mTextWeatherDay.setText(dailyList.get(Constant.INDEX_0).getWeather());
 
         List<Daily> weatherDayInTodayFrag = new ArrayList<>();
         weatherDayInTodayFrag.add(dailyList.get(Constant.INDEX_0));

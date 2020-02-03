@@ -1,7 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_night">
 
+    <TextView
+        android:id="@+id/text_title_aq_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/title_air_quality_index"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressbar_air_quality"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="@dimen/dp_140"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_152"
+        android:progress="@string/default_progress"
+        android:progressDrawable="@drawable/progress_drawable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_status_aq"
+        android:gravity="center"
+        android:layout_width="@dimen/dp_180"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/default_status_aq"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="@dimen/sp_24"
+        app:layout_constraintBottom_toBottomOf="@+id/progressbar_air_quality"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/progressbar_air_quality" />
+
+    <TextView
+        android:id="@+id/text_number_aq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/default_number_aq"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="@dimen/sp_36"
+        app:layout_constraintBottom_toTopOf="@+id/text_status_aq"
+        app:layout_constraintEnd_toEndOf="@+id/text_status_aq"
+        app:layout_constraintStart_toStartOf="@+id/text_status_aq" />
+
+    <TextView
+        android:id="@+id/text_content_aq"
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/default_content_aq"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@+id/text_status_aq"
+        app:layout_constraintStart_toStartOf="@+id/text_status_aq"
+        app:layout_constraintTop_toBottomOf="@+id/text_status_aq" />
 </androidx.constraintlayout.widget.ConstraintLayout>

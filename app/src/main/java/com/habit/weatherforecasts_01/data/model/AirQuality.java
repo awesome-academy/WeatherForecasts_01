@@ -1,20 +1,21 @@
 package com.habit.weatherforecasts_01.data.model;
 
 public class AirQuality {
-    private String mAqi;
+    private int mAqi;
 
     public AirQuality() {
     }
 
-    public AirQuality(String aqi) {
+    public AirQuality(int aqi) {
         mAqi = aqi;
     }
 
-    public String getAqi() {
+    public int getAqi() {
         return mAqi;
     }
 
-    public void setAqi(String aqi) {
+    public void setAqi(int aqi) {
         mAqi = aqi;
     }
+
 }

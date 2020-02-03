@@ -42,7 +42,7 @@ public class FetchAirQualityFromUrl extends AsyncTask<String, Void, AirQuality> 
     private AirQuality getAirQualityFromStringData(String data) throws JSONException {
         JSONObject jsonObject = new JSONObject(data);
         JSONObject dataObject = jsonObject.getJSONObject(AirQualityEntity.DATA_OBJECT);
-        String aqi = dataObject.getString(AirQualityEntity.AQI);
+        int aqi = Integer.parseInt(dataObject.getString(AirQualityEntity.AQI));
 
         AirQuality airQuality = new AirQuality(aqi);
         return airQuality;
@@ -74,7 +74,7 @@ public class FetchAirQualityFromUrl extends AsyncTask<String, Void, AirQuality> 
             return;
         }
         if (mException == null) {
-            mListener.onFetchDataSuccess(airQuality);
+            mListener.onFetchAirQualitySuccess(airQuality);
         } else {
             mListener.onFetchDataFailure(mException);
         }
