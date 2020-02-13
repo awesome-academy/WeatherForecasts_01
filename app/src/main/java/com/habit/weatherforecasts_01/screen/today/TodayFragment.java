@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,6 +19,7 @@ import com.habit.weatherforecasts_01.data.model.AirQuality;
 import com.habit.weatherforecasts_01.data.model.CurrentWeather;
 import com.habit.weatherforecasts_01.data.model.Daily;
 import com.habit.weatherforecasts_01.data.model.Hourly;
+import com.habit.weatherforecasts_01.screen.main.MainActivity;
 import com.habit.weatherforecasts_01.utils.StringUtil;
 
 import java.util.ArrayList;
@@ -32,6 +34,7 @@ public class TodayFragment extends Fragment implements TodayContract.View {
     private WeatherHourAdapter mWeatherHourAdapter;
     private RecyclerView mRecyclerHourBar;
 
+    private ConstraintLayout mLayoutFragmentToday;
     private ImageView mImageWeatherNow;
     private TextView mTextTempNow;
     private TextView mTextWeatherNow;
@@ -51,6 +54,7 @@ public class TodayFragment extends Fragment implements TodayContract.View {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_today, container, false);
 
+        mLayoutFragmentToday = view.findViewById(R.id.layout_fragment_today);
         mImageWeatherNow = view.findViewById(R.id.image_weather_now);
         mTextTempNow = view.findViewById(R.id.text_temp_now);
         mTextWeatherNow = view.findViewById(R.id.text_weather_now);
@@ -66,11 +70,17 @@ public class TodayFragment extends Fragment implements TodayContract.View {
         mRecyclerHourBar = view.findViewById(R.id.recycler_hourly_bar);
         mRecyclerDayBar = view.findViewById(R.id.recycler_daily_bar);
 
+        mLayoutFragmentToday.setBackgroundResource(StringUtil.getResIdOfBackgroundFromDevice());
         mTodayPresenter = new TodayPresenter(this);
-        mTodayPresenter.getCurrentWeather(Constant.LATITUDE_HANOI, Constant.LONGITUDE_HANOI);
-        mTodayPresenter.getDailyList(Constant.LATITUDE_HANOI, Constant.LONGITUDE_HANOI);
-        mTodayPresenter.getHourlyList(Constant.LATITUDE_HANOI, Constant.LONGITUDE_HANOI);
-        mTodayPresenter.getAirQuality(Constant.LATITUDE_HANOI, Constant.LONGITUDE_HANOI);
+        MainActivity mainActivity = (MainActivity) getActivity();
+        String lat = mainActivity.getNowLatitude();
+        String lon = mainActivity.getNowLongitude();
+        String address = mainActivity.getNowAddress();
+        mTextAddressNow.setText(address);
+        mTodayPresenter.getCurrentWeather(lat, lon);
+        mTodayPresenter.getDailyList(lat, lon);
+        mTodayPresenter.getHourlyList(lat, lon);
+        mTodayPresenter.getAirQuality(lat, lon);
         return view;
     }
 
