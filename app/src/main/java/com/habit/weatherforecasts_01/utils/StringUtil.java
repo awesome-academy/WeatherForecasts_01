@@ -8,6 +8,7 @@ import com.habit.weatherforecasts_01.constant.Constant;
 import com.habit.weatherforecasts_01.constant.IconWeather;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class StringUtil {
@@ -70,9 +71,21 @@ public class StringUtil {
     }
 
     public static String getStringHourFromDate(Date date) {
-        SimpleDateFormat hourFormat = new SimpleDateFormat(Constant.FORMAT_HOUR);
+        SimpleDateFormat hourFormat = new SimpleDateFormat(Constant.FORMAT_HOUR_2);
         String textHour = hourFormat.format(date);
         return textHour;
+    }
+
+    public static int getResIdOfBackgroundFromDevice() {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat hourFormat = new SimpleDateFormat(Constant.FORMAT_HOUR);
+        Date date = new Date(calendar.getTimeInMillis());
+        int textHour = Integer.parseInt(hourFormat.format(date));
+        if (textHour > 5 && textHour < 18) {
+            return R.drawable.background_day;
+        } else {
+            return R.drawable.background_night;
+        }
     }
 
     public static int getResIdOfIconFromName(String icon) {

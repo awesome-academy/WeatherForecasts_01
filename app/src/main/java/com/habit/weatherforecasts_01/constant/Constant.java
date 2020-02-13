@@ -4,8 +4,6 @@ public class Constant {
 
     public static final String BASE_URL = "https://api.darksky.net/forecast/";
     public static final String BASE_URL_AQI = "http://api.waqi.info/feed/geo:";
-    public static final String LATITUDE_HANOI = "21.028511";
-    public static final String LONGITUDE_HANOI = "105.804817";
     public static final String GET_TOKEN_AQI = "/?token=";
 
     public static final String REQUEST_METHOD_GET = "GET";
@@ -16,7 +14,8 @@ public class Constant {
     public static final String SPACE = " ";
 
     public static final String FORMAT_YEAR_MONTH_DAY = "YYYY, EEE MMM dd";
-    public static final String FORMAT_HOUR = "HH:mm";
+    public static final String FORMAT_HOUR_2 = "HH:mm";
+    public static final String FORMAT_HOUR = "HH";
     public static final String FORMAT_EEE = "EEE";
     public static final String FORMAT_DAY = "MMM dd";
     public static final String FORMAT_DAY_2 = "EEE, MMM dd";
